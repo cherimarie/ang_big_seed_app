@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AngularJs Training</title>
+
+    <link href="/stylesheets/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
+
+    <script src="/javascripts/angular.min.js"          type="text/javascript"></script>
+    <script src="/javascripts/angular-resource.min.js" type="text/javascript"></script>
+    <script src="/javascripts/application.js"          type="text/javascript"></script>
+  </head>
+
+  <!--  External services: JSONP -->
+  <body ng-app="MyApp">
+    <div class="row">
+      <div class='col-4 col-lg-offset-4'>
+        <div class="well well-lg">
+          <div class="panel" ng-controller='MyController'>
+            <div class="panel-heading">
+              <h3 class="panel-title">Consuming external services AngularJS</h3>
+            </div>
+
+            <input type='text' ng-model='searchTerm' class='form-control'>
+            <button ng-click='search()' class='btn btn-primary'>Search Google Finance</button>
+
+            <div class='panel' ng-repeat='result in searchResults'>
+              <div class='panel-heading'>{{searchTerm}}</div>
+              {{result.c}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
