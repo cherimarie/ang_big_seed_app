@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AngularJs Training</title>
+
+    <link href="stylesheets/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
+
+    <script src="javascripts/angular.min.js" type="text/javascript"></script>
+    <script src="javascripts/application.js" type="text/javascript"></script>
+  </head>
+
+  <!--  Custom events Basics -->
+  <body ng-app='MyApp'>
+    <div class="row">
+      <div class='col-4 col-lg-offset-4'>
+        <div class="well well-lg">
+          <div class="panel">
+            <div class="panel-heading">
+              <h3 class="panel-title">Broadcasting custom events with AngularJS</h3>
+            </div>
+
+            <div ng-controller='DashboardCtrl'>
+              <div ng-controller='ActivityCtrl' class='panel'>
+                <div class='row'>
+                  <div class='col-6' ng-click='left()'>
+                    Left
+                  </div>
+                  <div class='col-6' ng-click='right()'>
+                    Right
+                  </div>
+                </div>
+              </div>
+
+              <ul class='list-group'>
+                <li class='list-group-item' ng-repeat='event in events'>
+                  {{$index + 1}}
+                  -
+                  {{event}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
