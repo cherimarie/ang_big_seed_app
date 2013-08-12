@@ -14,5 +14,5 @@ app.factory("Person", function($resource){
 });
 
 app.controller("MyController", function($scope, Person){
-  $scope.people = Person.query();
+  $scope.people = Person.index();
 });
