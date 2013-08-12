@@ -1,0 +1,5 @@
+[
+  { "firstName": "Brad",     "lastName": "Pitt",   "age": 78,  "eyes": "Green", "id": 1 },
+  { "firstName": "Angelina", "lastName": "Jolie",  "age": 104, "eyes": "Blue",  "id": 2 },
+  { "firstName": "Tom",      "lastName": "Cruise", "age": 981, "eyes": "Two",   "id": 3 }
+]

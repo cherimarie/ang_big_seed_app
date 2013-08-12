@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AngularJs Training</title>
+
+    <link href="/stylesheets/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
+
+    <script src="/javascripts/angular.min.js" type="text/javascript"></script>
+    <script src="/javascripts/application.js" type="text/javascript"></script>
+  </head>
+
+  <!--  Controllers & Forms -->
+  <body ng-app>
+    <div class="row">
+      <div class='col-4 col-lg-offset-4'>
+        <div class="well well-lg">
+          <div class="panel">
+            <div class="panel-heading">
+              <h3 class="panel-title">Controllers & Forms with AngularJS</h3>
+            </div>
+
+            <div ng-controller='MyController'>
+              <!-- Submitting the forms triggers addItem() controller action -->
+              <form ng-submit='addItem()'>
+                <div class='form-group'>
+                  <input type="text" ng-model="itemText" placeholder="add new item here" class='form-control'>
+                </div>
+
+                <button type='submit' class='btn btn-primary'>
+                  Add
+                </button>
+
+                <button ng-click='clearItems()' form='#' class='btn btn-danger'>
+                  Clear all items
+                </button>
+              </form>
+
+              <!-- Show all the items that exist -->
+              <h3>Items</h3>
+              <ul>
+                <li ng-repeat='item in items'>
+                  {{item.text}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

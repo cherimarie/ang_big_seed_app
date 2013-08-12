@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AngularJs Training</title>
+
+    <link href="/stylesheets/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
+
+    <script src="/javascripts/angular.min.js" type="text/javascript"></script>
+    <script src="/javascripts/application.js" type="text/javascript"></script>
+  </head>
+
+  <!-- Filters -->
+  <body ng-app='MyApp'>
+    <div class="row">
+      <div class='col-4 col-lg-offset-4'>
+        <div class="well well-lg">
+          <div class="panel">
+            <div class="panel-heading">
+              <h3 class="panel-title">Filters with AngularJS</h3>
+            </div>
+
+            <!-- Example built in filter -->
+            <div class='form-group'>
+              <label>Converting numbers to currency</label>
+              <input type='number' ng-model="an_amount" class='form-control' placeholder='Enter an amount'>
+              {{an_amount | currency}}
+            </div>
+
+            <!-- Example custom filter -->
+            <div class='form-group'>
+              <label>Custom string reversal filter</label>
+              <input type='text' ng-model="a_string" class='form-control' placeholder='Start typing...'>
+              {{a_string | reverse}}
+            </div>
+
+            <!-- Example reducing array filter -->
+            <div class='form-group' ng-controller='MyController'>
+              <input type='text' ng-model="search" class='form-control' placeholder='Search items...'>
+              <ul>
+                <li ng-repeat="entry in entries | filter:search">
+                  {{entry.text}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
